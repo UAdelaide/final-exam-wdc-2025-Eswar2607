@@ -31,11 +31,11 @@ app.use('/users', usersRouter);
         const userCount     =   await dbConnection.execute('SELECT COUNT(*) AS COUNT FROM Users');
         if (userCount[0].count === 0) {
             await db.execute(`
-            INSERT INTO Users (username, email, password_hash, role)
-        VALUES
-        ('alice123', 'alice@example.com', 'hashed123', 'owner'),
-        ('carol123', 'carol@example.com', 'hashed456', 'owner')
-      `);
+                INSERT INTO Users (username, email, password_hash, role)
+                VALUES
+                ('alice123', 'alice@example.com', 'hashed123', 'owner'),
+                ('carol123', 'carol@example.com', 'hashed456', 'owner')
+                `);
         }
     }
 })
