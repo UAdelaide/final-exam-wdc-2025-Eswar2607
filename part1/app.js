@@ -95,10 +95,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
 
 app.get('/api/walkers/summary', async (req, res) => {
     try {
-        const [summaryRow] = await dbConnection.execute(
-
-            );
-            
+        const [summaryRow] = await dbConnection.execute();
     } catch (error) {
         console.log('Error fetching the walkerSummary data',error);
     }
