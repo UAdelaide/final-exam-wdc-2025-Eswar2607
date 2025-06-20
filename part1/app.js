@@ -51,13 +51,14 @@ let dbConnection;
             `);
         }
 
-        const walkerCount = await dbConnection.execute('SELECT COUNT(*) AS COUNT FROM Users WHERE role = "walker"');
-        if (walkerCount[0][0].COUNT === 0) {
+        const walkReqCount = await dbConnection.execute('SELECT COUNT(*) AS COUNT FROM WalkRequests');
+        if (walkReqCount[0][0].COUNT === 0) {
             await dbConnection.execute(`
-                INSERT INTO Users (username, email, password_hash, role)
+                INSERT INTO WalkRequests (request_id, walker_id, dog_id, requested_time, duration_minutes, location, status)
                 VALUES
-                ('bobwalker', 'bob@example.com', 'hashed789', 'walker'),
-                ('david_w', 'david@example.com', 'hashed101', 'walker')
+                (1, (SELECT user_id FROM Users WHERE username = 'bobwalker'), (SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-20 10:00:00', 30, 'Park', 'completed'),
+                (2, (SELECT user_id FROM Users WHERE username = 'bobwalker'), (SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-21 10:00:00', 45, 'Park', 'completed'),
+                (3, (SELECT user_id FROM Users WHERE username = 'david_w'), (SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-20 09:00:00', 30, 'Park', 'completed')
             `);
         }
 
