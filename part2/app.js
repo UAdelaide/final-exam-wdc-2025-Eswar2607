@@ -65,7 +65,9 @@ app.use('/api/users', userRoutes);
 
 app.post('/logout', (req, res) => {
     req.session.destroy(err => {
-        if (err)
+        if (err) {
+            return res.status(500).json.
+        }
     })
 })
 
