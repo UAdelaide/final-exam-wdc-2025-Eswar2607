@@ -50,29 +50,8 @@ let dbConnection;
                 ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small')
             `);
         }
+        
 
-        const walkReqCount = await dbConnection.execute('SELECT COUNT(*) AS COUNT FROM WalkRequests');
-        if (walkReqCount[0][0].COUNT === 0) {
-            await dbConnection.execute(`
-                INSERT INTO WalkRequests (request_id, walker_id, dog_id, requested_time, duration_minutes, location, status)
-                VALUES
-                (1, (SELECT user_id FROM Users WHERE username = 'bobwalker'), (SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-20 10:00:00', 30, 'Park', 'completed'),
-                (2, (SELECT user_id FROM Users WHERE username = 'bobwalker'), (SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-21 10:00:00', 45, 'Park', 'completed'),
-                (3, (SELECT user_id FROM Users WHERE username = 'david_w'), (SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-20 09:00:00', 30, 'Park', 'completed')
-            `);
-        }
-
-
-        const ratingCount = await dbConnection.execute('SELECT COUNT(*) AS COUNT FROM WalkRatings');
-        if (ratingCount[0][0].COUNT === 0) {
-            await dbConnection.execute(`
-                INSERT INTO WalkRatings (walker_id, rating, request_id)
-                VALUES
-                ((SELECT user_id FROM Users WHERE username = 'bobwalker'), 4.5, 1),
-                ((SELECT user_id FROM Users WHERE username = 'bobwalker'), 5.0, 2),
-                ((SELECT user_id FROM Users WHERE username = 'david_w'), 3.0, 3)
-            `);
-        }
         console.log('Data inserted to tables successfully');
     }
     catch (err) {
