@@ -24,7 +24,8 @@ app.use('/users', usersRouter);
         const dbConnection  =   await mysql.createConnection({
             host: 'localhost',
             user:'root',
-            password:''
+            password:'',
+            database:'Dogs'
         })
     }
 })
