@@ -60,6 +60,9 @@
             user.value = await res.json();
           } catch (error) {
             error.value = err.message;
+            if (err.response && err.response.status === 401) {
+                   window.location.href = '/index.html';
+              }
           }
         }
 
