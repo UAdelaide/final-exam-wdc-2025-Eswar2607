@@ -37,7 +37,7 @@ app.post('/login', async (req, res) => {
                 username: user.username,
                 role: user.role
             };
-                         if (user.role === 'owner') {
+            if (user.role === 'owner') {
                 res.redirect('/owner-dashboard.html');
             } else if (user.role === 'walker') {
                 res.redirect('/walker-dashboard.html');
@@ -52,6 +52,5 @@ app.post('/login', async (req, res) => {
         res.status(500).send('An error occurred during the login process.');
     }
 });
-
 
 module.exports = app;
