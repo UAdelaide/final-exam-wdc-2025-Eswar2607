@@ -56,7 +56,7 @@ router.post('/login', async (req, res) => {
     } else if (user.role === 'walker') {
       res.json({ redirect: '/walker-dashboard.html' });
     } else {
-      res.json({ redirect: '/' }); // fallback
+      res.json({ redirect: '/' });
     }
 
 
