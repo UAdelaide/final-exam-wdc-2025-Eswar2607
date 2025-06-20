@@ -58,10 +58,11 @@ app.use('/users', usersRouter);
 
 app.get('api/dogs', async (req, res) => {
     try {
-        const dogRows   =   await dbConnection.execute(
+        const [dogRows   =   await dbConnection.execute(
             `SELECT Dogs.name AS dog_name, Dogs.size, Users.username AS owner_username
             FROM Dogs
             JOIN Users ON Dogs.owner_id = Users.user_id`);
+            res.json(dogRows);
     } catch (error) {
         console.log('Error fetching the dogs data ', err);
     }
