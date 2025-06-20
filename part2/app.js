@@ -18,7 +18,9 @@ app.use('/api/users', userRoutes);
 // Export the app instead of listening here
 
 app.post('/login', async (req, res) => {
-    const {username, password } = req.
+    const {username, password } = req.body;
+
+    const [rows] = await 
 });
 
 
