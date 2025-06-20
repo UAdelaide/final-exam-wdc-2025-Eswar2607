@@ -58,7 +58,7 @@ app.use('/users', usersRouter);
 
 app.get('api/dogs', async (this.request, res) => {
     try {
-        const dogRows   =   await db
+        const dogRows   =   await dbConnection.execute()
 
     } catch (error) {
 
