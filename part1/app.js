@@ -19,6 +19,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 
+(async () => )
 
 
 module.exports = app;
