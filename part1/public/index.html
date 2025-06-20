@@ -9,8 +9,8 @@
 <body>
     <div id="app" class="dog-container" aria-label="Dog of the day section" role="region">
     <h1 style="font-size: 10px;">DOG OF THE DAY</h1>
-   <img v-if="dogImage"
-     :src="dogImage"
+   <img
+     src="dogImage"
      alt="A random dog picture"
      class="dog-image"
      @click="fetchDog"
