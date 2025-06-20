@@ -21,14 +21,14 @@ app.use('/users', usersRouter);
 
 (async () => {
     try {
-        const dbConnection  =   await mysql.createConnection({
+        const dbConnection = await mysql.createConnection({
             host: 'localhost',
             user:'root',
             password:'',
             database:'DogWalkService'
-        })
+        });
 
-        const userCount     =   await dbConnection.execute('SELECT COUNT(*) AS COUNT FROM Users');
+        const userCount = await dbConnection.execute('SELECT COUNT(*) AS COUNT FROM Users');
         if (userCount[0].count === 0) {
             await db.execute(`
                 INSERT INTO Users (username, email, password_hash, role)
@@ -38,7 +38,7 @@ app.use('/users', usersRouter);
                 `);
         }
 
-        const dogsCount     =   await dbConnection.execute('SELECT COUNT(*) AS COUNT FROM Dogs');
+        const dogsCount = await dbConnection.execute('SELECT COUNT(*) AS COUNT FROM Dogs');
         if (dogsCount[0].count === 0) {
              await db.execute(`
                 INSERT INTO Dogs (owner_id, name, size)
