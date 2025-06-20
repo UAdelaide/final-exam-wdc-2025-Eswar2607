@@ -51,9 +51,12 @@ app.use('/users', usersRouter);
         console.log('Data insereted to tables successfully');
     }
     catch (err) {
-        console.log('Error setting up the data ');
+        console.log('Error setting up the data ', err);
     }
 })();
+
+
+app.get
 
 
 module.exports = app;
