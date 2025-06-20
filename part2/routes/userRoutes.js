@@ -43,6 +43,7 @@ router.get('/dogs', async (req, res) => {
 
     try {
       const ownerId = req.session.user.id;
+      const [dogs] = await db.query
     } catch (error) {
 
     }
