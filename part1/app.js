@@ -48,7 +48,7 @@ app.use('/users', usersRouter);
             `);
         }
 
-        console.log
+        console.log('Data insereted to tables successfully');
     }
 })
 
