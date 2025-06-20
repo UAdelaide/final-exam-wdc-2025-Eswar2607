@@ -75,11 +75,9 @@
             const data = await response.json();
             console.log('Login response:', data);
             window.location.href = data.redirect;
-            // if (data.redirected) {
-            //   window.location.href = data.redirect;
-            // }
-          } catch (error) {
 
+          } catch (error) {
+            console.log('Login failed', error);
           }
         }
       }
