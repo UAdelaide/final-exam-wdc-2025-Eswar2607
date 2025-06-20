@@ -17,8 +17,8 @@ app.use(session({
     secret:'UserSession',
     resave:false,
     saveUninitialized:true,
-    cookie:{}
-}))
+    cookie:{secure:false}
+}));
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
