@@ -4,6 +4,9 @@ require('dotenv').config();
 
 const app = express();
 
+
+let dbConnection;
+
 // Middleware
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
@@ -20,7 +23,7 @@ app.use('/api/users', userRoutes);
 app.post('/login', async (req, res) => {
     const {username, password } = req.body;
 
-    const [rows] = await 
+    const [rows] = await
 });
 
 
