@@ -24,10 +24,12 @@ app.use('/api/users', userRoutes);
         dbConnection = await mysql.createConnection({
             host: 'localhost',
             user:'root',
-                    password:'',
-                    database:'DogWalkService'
-                });
-    } catch (error) {
+            password:'',
+            database:'DogWalkService'
+            });
+    }
+    catch (error)
+    {
         console.log('Error setting up the database ', error);
     }
 })();
