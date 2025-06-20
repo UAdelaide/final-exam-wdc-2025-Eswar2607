@@ -23,5 +23,14 @@ app.use('/api/users', userRoutes);
 
 // Export the app instead of listening here
 
+app.post('/login', async (req, res) => {
+    try {
+        const { username, password } = req.body;
+        const [rows] = await dbConnection.execute(
+            'SELECT * FROM Users WHERE username = ? AND password_hash = ?', [username, password]);
+
+        if (rows.length === 1) {
+            const user = rows[0];
+
 
 module.exports = app;
