@@ -6,6 +6,7 @@ var mysql = require('mysql2/promise');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+const { json } = require('stream/consumers');
 
 var app = express();
 
@@ -86,6 +87,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
             WHERE WalkRequests.status = 'open'
             ORDER BY WalkRequests.requested_time ASC`
             );
+            res.json(rows);
     } catch (error) {
         console.log('Error fetching the walkRequests data',error);
     }
