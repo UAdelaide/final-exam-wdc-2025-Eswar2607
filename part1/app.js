@@ -73,9 +73,6 @@ let dbConnection;
                 ((SELECT user_id FROM Users WHERE username = 'david_w'), 3.0, 3)
             `);
         }
-
-
-
         console.log('Data inserted to tables successfully');
     }
     catch (err) {
