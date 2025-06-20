@@ -50,8 +50,10 @@ app.use('/users', usersRouter);
 
         console.log('Data insereted to tables successfully');
     }
-    ca
-})
+    catch (err) {
+
+    }
+})();
 
 
 module.exports = app;
