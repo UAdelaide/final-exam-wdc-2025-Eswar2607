@@ -6,7 +6,7 @@ const session = require('express-session');
 const app = express();
 
 
-let dbConnection = requ;
+let dbConnection = require('');
 
 // Middleware
 app.use(express.json());
