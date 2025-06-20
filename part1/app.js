@@ -64,7 +64,7 @@ app.get('/api/dogs', async (req, res) => {
             JOIN Users ON Dogs.owner_id = Users.user_id`);
             res.json(dogRows);
     } catch (error) {
-        console.log('Error fetching the dogs data ', err);
+        console.log('Error fetching the dogs data',err);
     }
 });
 
