@@ -53,13 +53,9 @@
               body: JSON.stringify({ username: this.username, password: this.password })
             })
 
-                if (response.redirected) {
-              window.location.href = response.url; // redirect to owner/walker dashboard
-            } else {
-              const msg = await response.text();
-              this.errorMessage = msg;
+            if (response.redirected) {
+              window.location.href = response.url;
             }
-
           } catch (error) {
 
           }
