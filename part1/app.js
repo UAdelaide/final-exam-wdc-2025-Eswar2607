@@ -29,7 +29,7 @@ app.use('/users', usersRouter);
         })
 
         const userCount     =   await dbConnection.execute('SELECT COUNT(*) AS COUNT FROM Users');
-        if
+        if (userCount[0].count === 0)
     }
 })
 
