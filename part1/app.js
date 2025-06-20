@@ -56,7 +56,14 @@ app.use('/users', usersRouter);
 })();
 
 
-app.get('api/dogs', async (this.request, res))
+app.get('api/dogs', async (this.request, res) => {
+    try {
+        
+
+    } catch (error) {
+
+    }
+})
 
 
 module.exports = app;
