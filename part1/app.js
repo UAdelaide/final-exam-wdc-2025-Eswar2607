@@ -37,6 +37,8 @@ app.use('/users', usersRouter);
                 ('carol123', 'carol@example.com', 'hashed456', 'owner')
                 `);
         }
+
+        const dogsCount     =   await.dbConnection.exe
     }
 })
 
