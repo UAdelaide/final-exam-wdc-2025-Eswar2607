@@ -64,7 +64,9 @@ app.use('/api/users', userRoutes);
 
 
 app.post('/logout', (req, res) => {
-    req.session.destroy
+    req.session.destroy(err => {
+        if (err)
+    })
 })
 
 module.exports = app;
