@@ -62,7 +62,7 @@
 
           } catch (error) {
             console.log('Login failed', error);
-            
+            console.log(JSON.stringify({ email: this.email, password: this.password }))
           }
         }
       }
