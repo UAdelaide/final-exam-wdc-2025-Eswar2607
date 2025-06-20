@@ -25,7 +25,7 @@ app.use('/users', usersRouter);
             host: 'localhost',
             user:'root',
             password:'',
-            database:'Dogs'
+            database:'DogWalkService'
         })
     }
 })
