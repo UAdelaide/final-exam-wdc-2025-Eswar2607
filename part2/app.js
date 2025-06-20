@@ -21,9 +21,9 @@ app.use('/api/users', userRoutes);
 
 (async () => {
     try {
-         dbConnection = await mysql.createConnection({
-                    host: 'localhost',
-                    user:'root',
+        dbConnection = await mysql.createConnection({
+            host: 'localhost',
+            user:'root',
                     password:'',
                     database:'DogWalkService'
                 });
