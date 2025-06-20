@@ -63,6 +63,8 @@ app.use('/api/users', userRoutes);
 // });
 
 
-app.post('/logout', ())
+app.post('/logout', (req, res) => {
+    req.session.destroy
+})
 
 module.exports = app;
