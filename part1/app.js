@@ -70,5 +70,7 @@ app.get('/api/dogs', async (req, res) => {
     }
 });
 
+app.get
+
 
 module.exports = app;
