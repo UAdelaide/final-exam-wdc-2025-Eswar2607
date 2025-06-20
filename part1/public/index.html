@@ -7,7 +7,49 @@
 </head>
 
 <body>
-    <h1>Express</h1>
-    <p>Welcome to Express</p>
+    <div id="app" class="dog-container" aria-label="Dog of the day section" role="region">
+    <h1 style="font-size: 10px;">DOG OF THE DAY</h1>
+    <img
+      :src="dogImage"
+      alt="A random dog picture"
+      class="dog-image"
+      @click="fetchDog"
+      tabindex="0"
+      aria-describedby="dogDetails"
+    />
+    <p id="dogDetails" style="font-size: 8px; max-width: 100px; text-align: center; user-select:none;">
+      Name: <strong>{{ dogName }}</strong><br />
+      Breed: <em>{{ dogBreed }}</em>
+    </p>
+    <button @click="fetchDog" aria-label="Fetch new dog picture">New Dog!</button>
+  </div>
+
+  <script>
+    const { createApp } = Vue;
+
+    createApp({
+      data() {
+        return {
+          dogImage: '',
+          dogName: 'Sparky',
+          dogBreed: 'Mystery Mix',
+        };
+      },
+      methods: {
+        async fetchDog() {
+          try {
+            const res = await fetch('https://dog.ceo/api/breeds/image/random');
+            const data = await res.json();
+            this.dogImage = data.message;
+          } catch (e) {
+            this.dogImage = '';
+          }
+        }
+      },
+      mounted() {
+        this.fetchDog();
+      }
+    }).mount('#app');
+  </script>
 </body>
 </html>
