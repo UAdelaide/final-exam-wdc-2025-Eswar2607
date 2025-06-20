@@ -24,13 +24,4 @@ app.use('/api/users', userRoutes);
 // Export the app instead of listening here
 
 
-app.use(session({
-  secret: 'sessionKeyForUser', // Change this to a strong secret
-  resave: false,
-  saveUninitialized: false,
-  cookie: { secure: false } // Set to true if using HTTPS
-}));
-
-
-
 module.exports = app;
