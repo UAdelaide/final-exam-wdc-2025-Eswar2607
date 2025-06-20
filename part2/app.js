@@ -38,28 +38,6 @@ app.use('/api/users', userRoutes);
 
 // Export the app instead of listening here
 
-app.post('/login', async (req, res) => {
-    const {username, password } = req.body;
-    const [rows] = await dbConnection.execute(
-        'SELECT * FROM Users WHERE username = ? AND password_hash = ?', [username, password]);
-
-        if (rows.length === 1) {
-            const user = rows[0];
-            req.session.user = {
-                id: user.user_id,
-                username: user.username,
-                role: user.role
-            };
-
-             if (user.role === 'owner') {
-                res.redirect('/owner-dashboard.html');
-            } else if (user.role === 'walker') {
-                res.redirect('/walker-dashboard.html');
-            }
-        }
-});
-
-
 
 
 module.exports = app;
