@@ -20,10 +20,10 @@ app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
 app.use(session({
-  secret: 'supersecretkey', // change this in production
+  secret: 'supersecretkey',
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: false } // secure: true only on HTTPS
+  cookie: { secure: false }
 }));
 
 
