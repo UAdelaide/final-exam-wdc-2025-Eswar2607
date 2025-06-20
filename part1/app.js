@@ -39,7 +39,14 @@ app.use('/users', usersRouter);
         }
 
         const dogsCount     =   await dbConnection.execute('SELECT COUNT(*) AS COUNT FROM Dogs');
-        if (dogsCount[0])
+        if (dogsCount[0].count === 0) {
+             await db.execute(`
+                INSERT INTO Dogs (owner_id, name, size)
+                VALUES
+                ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'),
+                ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small')
+            `);
+        }
     }
 })
 
