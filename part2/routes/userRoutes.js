@@ -42,7 +42,7 @@ router.get('/dogs', async (req, res) => {
     }
 
     try {
-      const own
+      const ownerId = req.session.user.id;
     } catch (error) {
 
     }
