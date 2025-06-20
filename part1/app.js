@@ -28,7 +28,7 @@ app.use('/users', usersRouter);
             database:'DogWalkService'
         })
 
-        const userCount     =   await dbConnection.execute
+        const userCount     =   await dbConnection.execute('SELECT COUNT(*) ')
     }
 })
 
