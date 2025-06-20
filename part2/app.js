@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 require('dotenv').config();
 var mysql = require('mysql2/promise');
-
+const session = require('express-session');
 const app = express();
 
 
@@ -44,7 +44,7 @@ app.post('/login', async (req, res) => {
 
         if (rows.length === 1) {
             const user = rows[0];
-            req.
+            req.session
         }
 });
 
