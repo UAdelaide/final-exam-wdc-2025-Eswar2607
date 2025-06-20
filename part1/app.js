@@ -50,7 +50,6 @@ let dbConnection;
                 ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small')
             `);
         }
-        
 
         console.log('Data inserted to tables successfully');
     }
