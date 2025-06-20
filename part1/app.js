@@ -66,11 +66,11 @@ let dbConnection;
         const ratingCount = await dbConnection.execute('SELECT COUNT(*) AS COUNT FROM WalkRatings');
         if (ratingCount[0][0].COUNT === 0) {
             await dbConnection.execute(`
-                INSERT INTO WalkRatings (walker_id, rating)
+                INSERT INTO WalkRatings (walker_id, rating, request_id)
                 VALUES
-                ((SELECT user_id FROM Users WHERE username = 'bobwalker'), 4.5),
-                ((SELECT user_id FROM Users WHERE username = 'bobwalker'), 5.0),
-                ((SELECT user_id FROM Users WHERE username = 'david_w'), 3.0)
+                ((SELECT user_id FROM Users WHERE username = 'bobwalker'), 4.5, 1),
+                ((SELECT user_id FROM Users WHERE username = 'bobwalker'), 5.0, 2),
+                ((SELECT user_id FROM Users WHERE username = 'david_w'), 3.0, 3)
             `);
         }
 
