@@ -113,7 +113,7 @@ app.get('/api/walkers/summary', async (req, res) => {
                 completed_walks: Number(row.completed_walks)
                 }));
 
-            res.json(summaryRow);
+            res.json(result);
     } catch (error) {
         console.log('Error fetching the walkerSummary data',error);
     }
