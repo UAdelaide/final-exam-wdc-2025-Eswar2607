@@ -57,9 +57,9 @@
             const res = await fetch('/api/users/me');
             if (!res.ok) throw new Error('could not fetch user data');
 
-            
+            user.value = await res.json();
           } catch (error) {
-
+            error.value = err.message;
           }
         }
 
