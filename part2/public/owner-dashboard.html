@@ -118,6 +118,9 @@
         async function handleLogout() {
           try {
             const res = await fetch('/logout', { method: 'POST'});
+            if (res.ok) {
+              window.location.href = ''
+            }
           } catch (error) {
 
           }
