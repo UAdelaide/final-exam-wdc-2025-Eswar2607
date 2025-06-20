@@ -49,6 +49,12 @@ app.post('/login', async (req, res) => {
                 username: user.username,
                 role: user.role
             };
+
+             if (user.role === 'owner') {
+                res.redirect('/owner.html');
+            } else if (user.role === 'walker') {
+                res.redirect('/walker.html');
+            }
         }
 });
 
