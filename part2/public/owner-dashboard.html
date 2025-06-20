@@ -93,6 +93,10 @@
           }
         }
 
+        async function loadMyDogs() {
+          
+        }
+
         async function submitWalkRequest() {
           try {
             const res = await fetch('/api/walks', {
@@ -132,7 +136,7 @@
 
         onMounted(() => {
           loadWalks();
-          loadMyDogs(); 
+          loadMyDogs();
         });
 
         return {
