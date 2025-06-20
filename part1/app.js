@@ -27,6 +27,8 @@ app.use('/users', usersRouter);
             password:'',
             database:'DogWalkService'
         })
+
+        const userCount     =   await dbConnection.execute
     }
 })
 
