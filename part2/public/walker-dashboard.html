@@ -58,7 +58,6 @@
             if (!res.ok) throw new Error('could not fetch user data');
 
             user.value = await res.json();
-            console.log(user.value);
           } catch (error) {
             error.value = err.message;
             if (err.response && err.response.status === 401) {
