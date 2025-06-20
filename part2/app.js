@@ -46,7 +46,8 @@ app.post('/login', async (req, res) => {
             const user = rows[0];
             req.session.user = {
                 id: user.user_id,
-                user
+                username: user.username,
+                role:user.role
             }
         }
 });
