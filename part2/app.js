@@ -44,7 +44,10 @@ app.post('/login', async (req, res) => {
 
         if (rows.length === 1) {
             const user = rows[0];
-            req.session.user
+            req.session.user = {
+                id: user.user_id,
+                user
+            }
         }
 });
 
