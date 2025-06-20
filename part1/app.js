@@ -106,11 +106,11 @@ app.get('/api/walkers/summary', async (req, res) => {
             GROUP BY u.user_id`
             );
 
-            const result = summaryRow.map(summaryRow => ({
-                walker_username: summaryRow.walker_username,
-                total_ratings: Number(summaryRow.total_ratings),
-                average_rating: summaryRow.average_rating !== null ? Number(parseFloat(summaryRow.average_rating).toFixed(2)) : null,
-                completed_walks: Number(summaryRow.completed_walks)
+            const result = summaryRow.map(row => ({
+                walker_username: row.walker_username,
+                total_ratings: Number(row.total_ratings),
+                average_rating: row.average_rating !== null ? Number(parseFloat(row.average_rating).toFixed(2)) : null,
+                completed_walks: Number(row.completed_walks)
                 }));
 
             res.json(summaryRow);
