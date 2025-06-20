@@ -41,6 +41,8 @@ app.post('/login', async (req, res) => {
     const {username, password } = req.body;
     const [rows] = await dbConnection.execute(
         'SELECT * FROM Users WHERE username = ? AND password_hash = ?', [username, password]);
+
+        if (rows.length === 1) 
 });
 
 
