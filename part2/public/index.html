@@ -55,8 +55,8 @@
               body: JSON.stringify({ email: this.email, password: this.password })
             });
 
-           if (response.redirected) {
             
+           if (response.redirected) {
               window.location.href = response.url;
             }
 
