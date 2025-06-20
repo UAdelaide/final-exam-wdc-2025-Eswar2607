@@ -56,7 +56,7 @@ app.use('/users', usersRouter);
 })();
 
 
-app.get('api/dogs', async (this.request, res) => {
+app.get('api/dogs', async (req, res) => {
     try {
         const dogRows   =   await dbConnection.execute(
             `SELECT Dogs.name AS dog_name, Dogs.size, Users.username AS owner_username
@@ -65,7 +65,7 @@ app.get('api/dogs', async (this.request, res) => {
     } catch (error) {
         console.log('Error fetching the dogs data ', err);
     }
-})
+});
 
 
 module.exports = app;
