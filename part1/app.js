@@ -56,7 +56,7 @@ app.use('/users', usersRouter);
 })();
 
 
-app.get
+app.get('api/dogs', async (this.request, res))
 
 
 module.exports = app;
