@@ -28,7 +28,7 @@ app.use('/api/users', userRoutes);
                     database:'DogWalkService'
                 });
     } catch (error) {
-        console.log('Error setting up the data ', error);
+        console.log('Error setting up the database ', error);
     }
 })
 
@@ -37,7 +37,7 @@ app.use('/api/users', userRoutes);
 app.post('/login', async (req, res) => {
     const {username, password } = req.body;
 
-    const [rows] = await
+    const [rows] = await dbConnection.
 });
 
 
