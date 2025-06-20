@@ -47,6 +47,8 @@ app.use('/users', usersRouter);
                 ((SELECT user_id FROM Users WHERE username = 'carol123'), 'Bella', 'small')
             `);
         }
+
+        console.log
     }
 })
 
