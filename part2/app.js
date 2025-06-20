@@ -30,14 +30,14 @@ app.use('/api/users', userRoutes);
     } catch (error) {
         console.log('Error setting up the database ', error);
     }
-}())
+})();
 
 // Export the app instead of listening here
 
 app.post('/login', async (req, res) => {
     const {username, password } = req.body;
 
-    const [rows] = await dbConnection.ex
+    const [rows] = await dbConnection.exe
 });
 
 
