@@ -56,7 +56,7 @@ app.use('/users', usersRouter);
 })();
 
 
-app.get('api/dogs', async (req, res) => {
+app.get('/api/dogs', async (req, res) => {
     try {
         const [dogRows] = await dbConnection.execute(
             `SELECT Dogs.name AS dog_name, Dogs.size, Users.username AS owner_username
