@@ -100,7 +100,7 @@
 
             dogs.value = await res.json();
           } catch (error) {
-
+            error.value = err.message;
           }
         }
 
