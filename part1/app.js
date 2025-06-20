@@ -107,8 +107,9 @@ app.get('/api/walkers/summary', async (req, res) => {
             WHERE u.role = 'walker'
             GROUP BY u.user_id`
             );
+            res.json(summaryRow);
     } catch (error) {
-        console.log('Error fetching the walkRequests data',error);
+        console.log('Error fetching the walkerSummary data',error);
     }
 });
 
