@@ -19,12 +19,6 @@ const userRoutes = require('./routes/userRoutes');
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
-app.use(session({
-  secret: 'supersecretkey',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: false }
-}));
 
 
 (async () => {
