@@ -70,7 +70,7 @@ app.get('/api/dogs', async (req, res) => {
     }
 });
 
-app.get('/api/walk')
+app.get('/api/walkrequests/open', async)
 
 
 module.exports = app;
