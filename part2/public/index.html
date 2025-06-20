@@ -48,8 +48,17 @@
         async hadleLogin() {
           try {
             const response = await fetch('/login', {
-              
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ username: this.username, password: this.password })
             })
+
+                if (response.redirected) {
+              window.location.href = response.url; // redirect to owner/walker dashboard
+            } else {
+              const msg = await response.text();
+              this.errorMessage = msg;
+            }
 
           } catch (error) {
 
