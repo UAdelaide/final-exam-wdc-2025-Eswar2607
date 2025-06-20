@@ -82,6 +82,17 @@
           }
         }
 
+         async function handleLogout() {
+          try {
+            const res = await fetch('/logout', { method: 'POST'});
+            if (res.ok) {
+              window.location.href = '/index.html'
+            }
+          } catch (error) {
+            error.value = 'Logout failed. Please try again.';
+          }
+        }
+
         onMounted(() => {
           loadWalkRequests();
         });
