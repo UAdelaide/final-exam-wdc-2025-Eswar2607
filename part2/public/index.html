@@ -18,20 +18,20 @@
 
       <h2 class="text-center mb-4 text-primary">Login to Dog Walk Service</h2>
 
-  <form @submit.prevent="handleLogin" class="mx-auto" style="max-width: 400px;">
-    <div class="mb-3">
-      <label for="username" class="form-label">Username:</label>
-      <input type="text" v-model="username" id="username" class="form-control" required>
-    </div>
+        <form @submit.prevent="handleLogin" class="mx-auto" style="max-width: 400px;">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" v-model="username" id="username" class="form-control" required>
+          </div>
 
-     <div class="mb-3">
-        <label for="password" class="form-label">Password:</label>
-        <input type="password" v-model="password" id="password" class="form-control" required>
-      </div>
+          <div class="mb-3">
+              <label for="password" class="form-label">Password:</label>
+              <input type="password" v-model="password" id="password" class="form-control" required>
+            </div>
 
-      <button type="submit" class="btn btn-primary w-100">Login</button>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
 
-  </form>
+        </form>
 
   </div>
 
