@@ -51,9 +51,9 @@ app.post('/login', async (req, res) => {
             };
 
              if (user.role === 'owner') {
-                res.redirect('/owner.html');
+                res.redirect('/owner-dashboard.html');
             } else if (user.role === 'walker') {
-                res.redirect('/walker.html');
+                res.redirect('/walker-dashboard.html');
             }
         }
 });
