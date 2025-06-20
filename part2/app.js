@@ -37,7 +37,7 @@ app.use('/api/users', userRoutes);
 app.post('/login', async (req, res) => {
     const {username, password } = req.body;
 
-    const [rows] = await dbConnection.
+    const [rows] = await dbConnection.execute
 });
 
 
