@@ -52,26 +52,26 @@ let dbConnection;
         }
 
         const walkerCount = await dbConnection.execute('SELECT COUNT(*) AS COUNT FROM Users WHERE role = "walker"');
-if (walkerCount[0][0].COUNT === 0) {
-    await dbConnection.execute(`
-        INSERT INTO Users (username, email, password_hash, role)
-        VALUES
-        ('bobwalker', 'bob@example.com', 'hashed789', 'walker'),
-        ('david_w', 'david@example.com', 'hashed101', 'walker')
-    `);
-}
+        if (walkerCount[0][0].COUNT === 0) {
+            await dbConnection.execute(`
+                INSERT INTO Users (username, email, password_hash, role)
+                VALUES
+                ('bobwalker', 'bob@example.com', 'hashed789', 'walker'),
+                ('david_w', 'david@example.com', 'hashed101', 'walker')
+            `);
+        }
 
 
-const ratingCount = await dbConnection.execute('SELECT COUNT(*) AS COUNT FROM WalkRatings');
-if (ratingCount[0][0].COUNT === 0) {
-    await dbConnection.execute(`
-        INSERT INTO WalkRatings (walker_id, rating)
-        VALUES
-        ((SELECT user_id FROM Users WHERE username = 'bobwalker'), 4.5),
-        ((SELECT user_id FROM Users WHERE username = 'bobwalker'), 5.0),
-        ((SELECT user_id FROM Users WHERE username = 'david_w'), 3.0)
-    `);
-}
+        const ratingCount = await dbConnection.execute('SELECT COUNT(*) AS COUNT FROM WalkRatings');
+        if (ratingCount[0][0].COUNT === 0) {
+            await dbConnection.execute(`
+                INSERT INTO WalkRatings (walker_id, rating)
+                VALUES
+                ((SELECT user_id FROM Users WHERE username = 'bobwalker'), 4.5),
+                ((SELECT user_id FROM Users WHERE username = 'bobwalker'), 5.0),
+                ((SELECT user_id FROM Users WHERE username = 'david_w'), 3.0)
+            `);
+        }
 
 
 
