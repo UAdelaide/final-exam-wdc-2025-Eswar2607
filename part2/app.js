@@ -18,6 +18,9 @@ const userRoutes = require('./routes/userRoutes');
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
+
+(async )
+
 // Export the app instead of listening here
 
 app.post('/login', async (req, res) => {
