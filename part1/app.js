@@ -95,7 +95,16 @@ app.get('/api/walkrequests/open', async (req, res) => {
 
 app.get('/api/walkers/summary', async (req, res) => {
     try {
-        const [summaryRow] = await dbConnection.execute();
+        const [summaryRow] = await dbConnection.execute(`
+            SELECT u.username AS walker_username,
+            COUNT(wr.rating_id) AS total_ratings,
+            AVG(wr.rating) AS average_rating,
+            COUNT(wr.rating_id) AS completed_walks
+            FROM Users u
+            LEFT JOIN WalkRatings wr ON wr.walker_id = u.user_id
+            WHERE u.role = 'walker'
+            GROUP BY u.user_id`
+            );
     } catch (error) {
         console.log('Error fetching the walkerSummary data',error);
     }
