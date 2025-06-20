@@ -68,7 +68,8 @@ app.post('/logout', (req, res) => {
         if (err) {
             return res.status(500).json({message:'Could not log out please try again'})
         }
-        res.clearCookie('connect.')
+        res.clearCookie('connect.sid');
+        res.status
     });
 });
 
