@@ -21,21 +21,6 @@ app.use('/api/users', userRoutes);
 
 
 
-(async () => {
-    try {
-        dbConnection = await mysql.createConnection({
-            host: 'localhost',
-            user:'root',
-            password:'',
-            database:'DogWalkService'
-            });
-    }
-    catch (error)
-    {
-        console.log('Error setting up the database ', error);
-    }
-})();
-
 // Export the app instead of listening here
 
 
