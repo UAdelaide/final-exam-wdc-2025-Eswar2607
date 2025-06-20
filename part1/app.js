@@ -38,7 +38,8 @@ app.use('/users', usersRouter);
                 `);
         }
 
-        const dogsCount     =   await dbConnection.execute('SELECT COUNT(')
+        const dogsCount     =   await dbConnection.execute('SELECT COUNT(*) AS COUNT FROM Dogs');
+        if (dogsCount[0])
     }
 })
 
