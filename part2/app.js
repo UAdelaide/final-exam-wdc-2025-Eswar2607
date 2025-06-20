@@ -14,7 +14,8 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 app.use(session({
 
-    secret:
+    secret:'UserSession',
+    resa
 }))
 
 // Routes
