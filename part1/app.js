@@ -106,7 +106,7 @@ app.get('/api/walkers/summary', async (req, res) => {
             GROUP BY u.user_id`
             );
 
-            const result = summaryRow.map(row => ({
+            const result = summaryRow.map((row) => ({
                 walker_username: row.walker_username,
                 total_ratings: Number(row.total_ratings),
                 average_rating: row.average_rating !== null ? Number(parseFloat(row.average_rating).toFixed(2)) : null,
