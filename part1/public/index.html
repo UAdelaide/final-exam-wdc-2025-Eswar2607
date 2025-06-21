@@ -77,7 +77,7 @@
               })
             )
           } catch (error) {
-
+            return { ...dog, image: 'https://via.placeholder.com/60x60?text=No+Img', error };
           }
         }
       },
