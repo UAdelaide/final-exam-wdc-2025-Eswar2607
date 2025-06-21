@@ -81,8 +81,9 @@
 
               })
             );
+            this.allDogs  = dogsWithImages;
           } catch (error) {
-
+            console.error('Failed to fetch dogs:', error);
           }
         }
       },
