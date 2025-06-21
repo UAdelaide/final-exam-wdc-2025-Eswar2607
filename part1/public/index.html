@@ -75,6 +75,7 @@
                 try {
                   const imagesRes = await fetch('https://dog.ceo/api/breeds/image/random');
                   const imageData = await imagesRes.json();
+                  return { ...dog, image: imgData.message };
                 } catch (error) {
                   return { ...dog, image: 'https://via.placeholder.com/60x60?text=No+Img', error };
                 }
