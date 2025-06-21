@@ -70,7 +70,9 @@
             const res = await fetch('/api/dogs');
             const dogsData = await res.json();
 
-            const dogsWithImages = 
+            const dogsWithImages = await Promise.all(
+              dogsData.map
+            )
           } catch (error) {
 
           }
