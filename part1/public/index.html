@@ -71,7 +71,9 @@
             const dogsData = await res.json();
 
             const dogsWithImages = await Promise.all(
-              dogsData.map
+              dogsData.map(async (dog) => {
+                const imagesRes = await fetch
+              })
             )
           } catch (error) {
 
