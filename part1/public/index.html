@@ -68,7 +68,9 @@
         async fetchAllDogs() {
           try {
             const res = await fetch('/api/dogs');
-            const dogsData = 
+            const dogsData = await res.json();
+
+            const dogsWithImages = 
           } catch (error) {
 
           }
