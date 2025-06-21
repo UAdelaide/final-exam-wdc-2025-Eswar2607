@@ -72,12 +72,17 @@
 
             const dogsWithImages = await Promise.all(
               dogsData.map(async (dog) => {
-                const imagesRes = await fetch('https://dog.ceo/api/breeds/image/random');
-                const imageData = await imagesRes.json();
+                try {
+                  const imagesRes = await fetch('https://dog.ceo/api/breeds/image/random');
+                  const imageData = await imagesRes.json();
+                } catch (error) {
+                  return { ...dog, image: 'https://via.placeholder.com/60x60?text=No+Img', error };
+                }
+
               })
             )
           } catch (error) {
-            return { ...dog, image: 'https://via.placeholder.com/60x60?text=No+Img', error };
+
           }
         }
       },
